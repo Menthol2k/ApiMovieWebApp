@@ -1,5 +1,5 @@
 <template>
-    <Link :href="`/show/${movie.id}`">
+    <Link class="overflow-hidden" :href="`/show/${movie.id}`">
     <div ref="target" :style="{
         transform: cardTransform,
         transition: 'transform 0.25s ease-out, box-shadow 0.3s ease-in-out'
@@ -8,27 +8,27 @@
 
         <!-- Movie Poster -->
         <img :src="`https://image.tmdb.org/t/p/w220_and_h330_face/${movie.poster_path}`" alt="Movie Poster"
-            class="w-full h-auto object-cover rounded-t-xl transition-transform duration-500 ease-in-out" />
+            class="w-full overflow-hidden h-auto object-cover rounded-t-xl transition-transform duration-500 ease-in-out" />
 
         <!-- Overlay for more details on hover -->
         <div
-            class="absolute inset-0 bg-black bg-opacity-60 opacity-0 hover:opacity-100 transition-all flex flex-col justify-between p-3">
+            class="absolute inset-0 bg-black overflow-hidden bg-opacity-60 opacity-0 hover:opacity-100 transition-all flex flex-col justify-between p-3">
             <div class="text-white">
                 <!-- Movie Title -->
-                <h1 class="font-semibold text-xl mb-2">{{ movie.title }}</h1>
+                <h1 class="font-semibold text-xl mb-2 overflow-hidden">{{ movie.title }}</h1>
 
                 <!-- Movie Overview -->
-                <p class="text-sm line-clamp-3 mb-2">{{ movie.overview }}</p>
+                <p class="text-sm line-clamp-3 mb-2 overflow-hidden">{{ movie.overview }}</p>
 
                 <!-- Rating -->
-                <div class="flex items-center space-x-2 text-green-500">
-                    <span class="font-semibold">{{ (movie.vote_average).toFixed() }}/10</span>
-                    <span class="text-sm text-gray-400">({{ movie.vote_count }} votes)</span>
+                <div class="flex items-center space-x-2 text-green-500 overflow-hidden">
+                    <span class="font-semibold overflow-hidden">{{ (movie.vote_average).toFixed() }}/10</span>
+                    <span class="text-sm text-gray-400 overflow-hidden">({{ movie.vote_count }} votes)</span>
                 </div>
             </div>
 
             <!-- Movie Release Date and Genre -->
-            <div class="text-white mt-2 text-sm">
+            <div class="text-white mt-2 text-sm overflow-hidden">
                 <div><strong>Release Date:</strong> {{ moment(movie.release_date).format('DD/MM/YYYY') }}</div>
             </div>
         </div>

@@ -156,7 +156,7 @@ export default {
                 method: 'GET',
                 headers: {
                     accept: 'application/json',
-                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYmZmMDU0ZGIwOGMyMzQwZjY3MWZiZjUzMDgyNmU0NiIsIm5iZiI6MTczNTA3NDUwNy41MTEwMDAyLCJzdWIiOiI2NzZiMjJjYjI0OGM5MmUzZWZhOWRkYjYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.xuPSHRpFulk12o_z-SFZLJleJI2hMTOnmGpHg5RN7qE'
+                    Authorization: `Bearer ${this.$page.props.movie_api}`
                 }
             };
 
@@ -166,14 +166,6 @@ export default {
                 .then(res => console.log(res))
                 .catch(err => console.error(err));
         }
-    },
-    // watch: {
-    //     query: {
-    //         handler: throttle(() => {
-    //             this.refreshSearch();
-    //         }, 350).bind(this) 
-    //     }
-    // }
-
+    }
 };
 </script>
